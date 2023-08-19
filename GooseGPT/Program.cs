@@ -11,13 +11,10 @@ namespace GooseGPT
     public class ModMain : IMod
     {
         const string OpenAIApiKey = "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";
-        static readonly string Path = Directory.GetCurrentDirectory() + @"\Assets\Text\NotepadMessages";
+        static readonly string path = Directory.GetCurrentDirectory() + @"\Assets\Text\NotepadMessages";
 
         const string prompt =
-            "Напиши несколько фраз на бодобие \"Хорошей работы\" \"я делаяю это специально\" Напитши один вариант";
-
-        const string model = "text-davinci-003";
-
+            "Desktop Goose is a performance reducing program created by independent developer Samperson. It imitates a cute goose on your desktop, but it's not cute at all. The goose will constantly wreak havoc on your computer by chasing your cursor, shifting your windows, and launching the Notepad app while you're playing a game. Inspired by Untitled Goose Game and Skatebird, Desktop Goose is another app designed to boost your productivity. Write a phrase that a goose could say";
 
         public void Init()
         {
@@ -30,13 +27,12 @@ namespace GooseGPT
         {
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-
             var openAI = new OpenAIAPI(new APIAuthentication(OpenAIApiKey));
             var conversation = openAI.Chat.CreateConversation();
-            conversation.AppendUserInput("напиши только \"Да\"");
+            conversation.AppendUserInput(prompt);
             var response = await conversation.GetResponseFromChatbotAsync();
-            using var writer = new StreamWriter(Path + @"\message.txt");
-            Console.WriteLine(response);
+            using var writer = new StreamWriter(path + @"\messagegpt.txt");
+            await writer.WriteLineAsync(response);
             writer.Close();
         }
 
@@ -44,14 +40,13 @@ namespace GooseGPT
         {
             if (_flag && goose.currentTask == 3)
             {
-                Task.Run(updateText);
                 _flag = false;
             }
 
             if (!_flag && goose.currentTask == 0)
             {
                 Console.WriteLine("Start");
-                updateText();
+                Task.Run(updateText);
                 _flag = true;
             }
         }
