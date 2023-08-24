@@ -10,7 +10,9 @@ namespace GooseGPT
 {
     public class ModMain : IMod
     {
-        const string OpenAIApiKey = "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";
+        private static string OpenAIApiKey =
+            File.ReadAllText(Directory.GetCurrentDirectory() + @"\Assets\Mods\GooseGPT\Key.txt");
+
         static readonly string path = Directory.GetCurrentDirectory() + @"\Assets\Text\NotepadMessages";
 
         const string prompt =

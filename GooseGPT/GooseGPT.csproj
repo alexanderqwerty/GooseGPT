@@ -6,7 +6,6 @@
     </PropertyGroup>
 
 
-
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
         <DefineConstants>RELEASE;TRACE;</DefineConstants>
     </PropertyGroup>
@@ -29,26 +28,27 @@
         <Content Include="Newtonsoft.Json.dll" LinkBase="lib"/>
         <Content Include="Microsoft.Extensions.Http.dll" LinkBase="lib"/>
         <Content Include="System.IO.dll" LinkBase="lib"/>
+        <Content Include="Key.txt"/>
     </ItemGroup>
     <!--TODO:  try to move .dll files to lib dir-->
-<!--    <ItemGroup>-->
-<!--        <Content Include="lib/GooseModdingAPI.dll">-->
-<!--            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
-<!--        </Content>-->
-<!--        <Content Include="lib/OpenAI_API.dll">-->
-<!--            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
-<!--        </Content>-->
-<!--        <Content Include="lib/Microsoft.Bcl.AsyncInterfaces.dll">-->
-<!--            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
-<!--        </Content>-->
-<!--        <Content Include="lib/Newtonsoft.Json.dll">-->
-<!--            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
-<!--        </Content>-->
-<!--        <Content Include="lib/Microsoft.Extensions.Http.dll">-->
-<!--            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
-<!--        </Content>-->
-<!--        <Content Include="lib/System.IO.dll">-->
-<!--            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
-<!--        </Content>-->
-<!--    </ItemGroup>-->
+    <!--    <ItemGroup>-->
+    <!--        <Content Include="lib/GooseModdingAPI.dll">-->
+    <!--            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
+    <!--        </Content>-->
+    <!--        <Content Include="lib/OpenAI_API.dll">-->
+    <!--            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
+    <!--        </Content>-->
+    <!--        <Content Include="lib/Microsoft.Bcl.AsyncInterfaces.dll">-->
+    <!--            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
+    <!--        </Content>-->
+    <!--        <Content Include="lib/Newtonsoft.Json.dll">-->
+    <!--            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
+    <!--        </Content>-->
+    <!--        <Content Include="lib/Microsoft.Extensions.Http.dll">-->
+    <!--            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
+    <!--        </Content>-->
+    <!--        <Content Include="lib/System.IO.dll">-->
+    <!--            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
+    <!--        </Content>-->
+    <!--    </ItemGroup>-->
 </Project>
